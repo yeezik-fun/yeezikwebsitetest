@@ -1,4 +1,5 @@
 ---
+import { u } from '../lib/url';
 import Layout from '../layouts/Layout.astro';
 import Wordmark from '../components/Wordmark.astro';
 ---
@@ -10,9 +11,9 @@ import Wordmark from '../components/Wordmark.astro';
       <Wordmark text="YEEZIK" />
       <div class="hero-foot">
         <div class="pills">
-          <a class="pill on" href="/music">Music</a>
-          <a class="pill" href="/events">Events</a>
-          <a class="pill" href="/about">Story</a>
+          <a class="pill on" href={u("/music")}>Music</a>
+          <a class="pill" href={u("/events")}>Events</a>
+          <a class="pill" href={u("/about")}>Story</a>
         </div>
       </div>
     </section>
