@@ -1,0 +1,59 @@
+---
+// Struttura comune a tutte le pagine: head, riga in alto, menu mobile, footer, script.
+interface Props {
+  title: string;
+  description: string;
+  active: 'home' | 'about' | 'music' | 'events';
+  ascii?: boolean; // carica lo sfondo ASCII (solo Home)
+}
+const { title, description, active, ascii = false } = Astro.props;
+
+const nav = [
+  { href: '/', label: 'Home', key: 'home' },
+  { href: '/about', label: 'About', key: 'about' },
+  { href: '/music', label: 'Music', key: 'music' },
+  { href: '/events', label: 'Events', key: 'events' },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <header class="top wrap cap">
+      <a class="brand" href="/">YEEZIK</a>
+      <span class="hide-sm">Music producer<br />&amp; DJ</span>
+      <nav class="hide-sm" aria-label="Main">
+        {nav.map((n) => <a href={n.href} aria-current={n.key === active ? 'page' : undefined}>{n.label}</a>)}
+      </nav>
+      <span class="year hide-sm">2026</span>
+      <button class="pill small menu-btn" type="button" aria-expanded="false" aria-controls="sheet">Menu</button>
+    </header>
+
+    <div class="sheet wrap" id="sheet" hidden>
+      <div class="sheet-top cap"><span class="brand">YEEZIK</span><button class="pill small sheet-close" type="button">Close</button></div>
+      <nav aria-label="Menu">
+        {nav.map((n) => <a href={n.href} aria-current={n.key === active ? 'page' : undefined}>{n.label}</a>)}
+      </nav>
+      <span class="cap mute">House / Tech-house &mdash; 2026</span>
+    </div>
+
+    <slot />
+
+    <footer class="foot wrap cap">
+      <span>YEEZIK</span>
+      <span class="mute">House / Tech-house</span>
+      <a href="https://www.instagram.com/iamyeezik/">Instagram &#8599;</a>
+      <span class="year mute">&copy;2026</span>
+    </footer>
+
+    <script is:inline src="/assets/main.js" defer></script>
+    {ascii && <script is:inline src="/assets/ascii.js" defer></script>}
+  </body>
+</html>

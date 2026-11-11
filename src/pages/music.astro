@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Wordmark from '../components/Wordmark.astro';
+---
+<Layout title="Music — YEEZIK" description="Releases by Yeezik." active="music">
+  <main>
+    <section class="page-head wrap">
+      <Wordmark text="MUSIC" cls="page-word" />
+    </section>
+    <section class="section wrap">
+      <span class="section-label cap">Releases</span>
+      <p class="stagger">
+        <span class="i1">The first record is</span>
+        <span class="accent">almost ready <i class="dash"></i> stay close</span>
+      </p>
+      <div class="list">
+        <div class="item"><span class="cap mute">001</span><span class="t">Untitled</span><span class="pill small on">Coming soon</span></div>
+        <div class="item"><span class="cap mute">002</span><span class="t dim">Locked</span><span class="pill small">&mdash;</span></div>
+        <div class="item"><span class="cap mute">003</span><span class="t dim">Locked</span><span class="pill small">&mdash;</span></div>
+      </div>
+      <div class="split">
+        <div class="spacer"></div>
+        <div>
+          <h2 class="h3">Where to listen</h2>
+          <p class="p">Spotify, Apple Music and SoundCloud links appear here with the first release.</p>
+        </div>
+        <div class="pills"><a class="pill on" href="https://www.instagram.com/iamyeezik/">Get notified &#8599;</a></div>
+      </div>
+    </section>
+  </main>
+</Layout>

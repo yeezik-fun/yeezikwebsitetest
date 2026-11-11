@@ -1,0 +1,16 @@
+---
+// Scritta gigante: ogni lettera è un elemento animato; la "I" diventa una colonna di pixel.
+interface Props {
+  text: string;
+  cls?: string;
+}
+const { text, cls = 'word' } = Astro.props;
+
+// [x, y, lato, ritardo] di ogni quadratino, in em rispetto alla dimensione della scritta
+const PX: [number, number, number, number][] = [
+  [0.1, 0, 0.16, 0], [0, 0.15, 0.1, 1], [0.08, 0.29, 0.13, 2], [0.19, 0.45, 0.07, 3],
+  [0, 0.52, 0.11, 4], [0.13, 0.64, 0.08, 5], [0.2, 0.76, 0.06, 6], [-0.04, 0.85, 0.05, 7],
+];
+const chars = [...text];
+---
+<h1 class={cls} data-fit aria-label={text}>{chars.map((c, i) => c === 'I' ? (<span class="px" aria-hidden="true">{PX.map(([x, y, s, d]) => <i style={`--x:${x}em;--y:${y}em;--s:${s}em;--d:${d}`}></i>)}</span>) : (<span class="ch" style={`--i:${i}`} aria-hidden="true">{c}</span>))}</h1>

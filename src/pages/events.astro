@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Wordmark from '../components/Wordmark.astro';
+---
+<Layout title="Events — YEEZIK" description="Upcoming dates and booking for Yeezik." active="events">
+  <main>
+    <section class="page-head wrap">
+      <Wordmark text="EVENTS" cls="page-word" />
+    </section>
+    <section class="section wrap">
+      <span class="section-label cap">Dates</span>
+      <div class="list" style="margin-top:0">
+        <div class="item"><span class="cap mute">TBA</span><span class="t dim">No dates announced yet</span><span class="pill small">Stay tuned</span></div>
+      </div>
+      <div class="split">
+        <div>
+          <h2 class="h3">Booking</h2>
+          <div class="pills" style="flex-direction:column;align-items:flex-start">
+            <button class="pill copy" type="button" data-copy="contact@yeezik.com"><span class="value">contact@yeezik.com</span><span class="state">Copy</span></button>
+            <button class="pill copy" type="button" data-copy="guestlist@yeezik.com"><span class="value">guestlist@yeezik.com</span><span class="state">Copy</span></button>
+          </div>
+        </div>
+        <div class="spacer"></div>
+        <div>
+          <h2 class="h3">Rider</h2>
+          <dl class="spec cap">
+            <div><dt>Players</dt><dd>2&times; Pioneer CDJ-3000</dd></div>
+            <div><dt>Mixer</dt><dd>Pioneer DJM-V10</dd></div>
+            <div><dt>Booth</dt><dd>Monitor speakers</dd></div>
+            <div><dt>Mic</dt><dd>1&times; microphone</dd></div>
+            <div><dt>Hospitality</dt><dd>On request</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
