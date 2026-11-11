@@ -9,65 +9,65 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="wordmark" href="./">YEEZIK <span>&copy;2026</span></a>
-    <nav class="nav" aria-label="Main">
-      <a href="./" aria-current="page">Home</a>
-      <a href="about.html">About</a>
-      <a href="music.html">Music</a>
-      <a href="events.html">Events</a>
-    </nav>
+  <header class="top wrap cap">
+    <a class="brand" href="./">YEEZIK</a>
+    <span class="hide-sm">Music producer<br>&amp; DJ</span>
+    <nav class="hide-sm" aria-label="Main"><a href="./" aria-current="page">Home</a><a href="about.html">About</a><a href="music.html">Music</a><a href="events.html">Events</a></nav>
+    <span class="year hide-sm">2026</span>
+    <button class="pill small menu-btn" type="button" aria-expanded="false" aria-controls="sheet">Menu</button>
   </header>
+
+  <div class="sheet wrap" id="sheet" hidden>
+    <div class="sheet-top cap"><span class="brand">YEEZIK</span><button class="pill small sheet-close" type="button">Close</button></div>
+    <nav aria-label="Menu"><a href="./" aria-current="page">Home</a><a href="about.html">About</a><a href="music.html">Music</a><a href="events.html">Events</a></nav>
+    <span class="cap mute">House / Tech-house &mdash; 2026</span>
+  </div>
+
   <main>
-    <section class="hero">
-      <h1 class="mega" data-split>Yeezik</h1>
-      <div class="hero-meta">
-        <span class="label q">Music producer &amp; DJ</span>
-        <span class="label q">House / Tech-house</span>
-        <span class="label q">Status: Unknown</span>
+    <section class="hero wrap">
+      <p class="hero-tag">From nobody to somebody.<br>House and tech-house for the club.</p>
+      <h1 class="word" data-fit aria-label="YEEZIK"><span class="ch" style="--i:0" aria-hidden="true">Y</span><span class="ch" style="--i:1" aria-hidden="true">E</span><span class="ch" style="--i:2" aria-hidden="true">E</span><span class="ch" style="--i:3" aria-hidden="true">Z</span><span class="px" aria-hidden="true"><i style="--x:0.1em;--y:0em;--s:0.16em;--d:0"></i><i style="--x:0em;--y:0.15em;--s:0.1em;--d:1"></i><i style="--x:0.08em;--y:0.29em;--s:0.13em;--d:2"></i><i style="--x:0.19em;--y:0.45em;--s:0.07em;--d:3"></i><i style="--x:0em;--y:0.52em;--s:0.11em;--d:4"></i><i style="--x:0.13em;--y:0.64em;--s:0.08em;--d:5"></i><i style="--x:0.2em;--y:0.76em;--s:0.06em;--d:6"></i><i style="--x:-0.04em;--y:0.85em;--s:0.05em;--d:7"></i></span><span class="ch" style="--i:5" aria-hidden="true">K</span></h1>
+      <div class="hero-foot">
+        <div class="pills">
+          <a class="pill on" href="music.html">Music</a>
+          <a class="pill" href="events.html">Events</a>
+          <a class="pill" href="about.html">Story</a>
+        </div>
       </div>
     </section>
 
-    <section class="grid">
-      <div class="col-5">
-        <figure class="frame" style="margin:0">
-          <span class="corner tl label">Photo &mdash; 4:5</span>
-          <span class="label">Your photo here</span>
-          <span class="corner br label">YZK / 001</span>
-        </figure>
+    <section class="section wrap">
+      <span class="section-label cap">About</span>
+      <p class="stagger">
+        <span class="i1">This is the start of</span>
+        <span class="accent">a story from nobody <i class="dash"></i> to somebody</span>
+        <span>a producer and DJ building</span>
+        <span class="i3">his sound one record,</span>
+        <span class="i3">one night at a time.</span>
+      </p>
+      <div class="split">
+        <div class="spacer"></div>
+        <div>
+          <h2 class="h3">Right now</h2>
+          <p class="p">The first release is in the studio. House and tech-house, 124&ndash;128 BPM, made for the booth.</p>
+          <p class="p">Bold sound. Clean visuals. Every step shared here first.</p>
+        </div>
+        <div class="card">
+          <div class="row2"><span class="cap">ST&#9733;RBOY</span><span class="cap mute">Level 001</span></div>
+          <div class="big">UNKNOWN</div>
+          <div class="blocks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <span class="cap mute">Next levels locked</span>
+        </div>
       </div>
-      <div class="col-7 stack" style="align-content:end">
-        <span class="label">The story so far</span>
-        <p class="lead">From nobody to somebody. This is the page where it starts.</p>
-        <p class="body">House and tech-house built for the club. Records in progress, the first release is on its way. Follow the journey from the first track to the main stage.</p>
-        <a class="cta" href="about.html">Read the story <span class="arrow">&rarr;</span></a>
-      </div>
-    </section>
-
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <span>&ldquo;For club use&rdquo;</span><span>House</span><span>Tech-house</span><span>124&ndash;128 BPM</span><span>ST&#9733;RBOY</span><span>Level 001: Unknown</span>
-        <span>&ldquo;For club use&rdquo;</span><span>House</span><span>Tech-house</span><span>124&ndash;128 BPM</span><span>ST&#9733;RBOY</span><span>Level 001: Unknown</span>
-      </div>
-    </div>
-
-    <section class="grid">
-      <div class="col-6 stack">
-        <span class="label">Music</span>
-        <h2 class="h2">First release coming soon.</h2>
-        <a class="cta" href="music.html">Listen <span class="arrow">&rarr;</span></a>
-      </div>
-      <div class="col-6 stack">
-        <span class="label">Events</span>
-        <h2 class="h2">Dates announced here first.</h2>
-        <a class="cta" href="events.html">See dates <span class="arrow">&rarr;</span></a>
-      </div>
+      <p class="corner-note cap">We all start as an unknown name on a flyer.</p>
     </section>
   </main>
-  <footer class="site-footer">
-    <span class="label">YEEZIK &mdash; Music producer &amp; DJ</span>
-    <a class="label" href="https://www.instagram.com/iamyeezik/">Instagram @iamyeezik &#8599;</a>
-    <span class="label q">ST&#9733;RBOY Level 001</span>
+
+  <footer class="foot wrap cap">
+    <span>YEEZIK</span>
+    <span class="mute">House / Tech-house</span>
+    <a href="https://www.instagram.com/iamyeezik/">Instagram &#8599;</a>
+    <span class="year mute">&copy;2026</span>
   </footer>
   <script src="assets/main.js" defer></script>
 </body>

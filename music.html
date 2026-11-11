@@ -9,56 +9,51 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="wordmark" href="./">YEEZIK <span>&copy;2026</span></a>
-    <nav class="nav" aria-label="Main">
-      <a href="./">Home</a>
-      <a href="about.html">About</a>
-      <a href="music.html" aria-current="page">Music</a>
-      <a href="events.html">Events</a>
-    </nav>
+  <header class="top wrap cap">
+    <a class="brand" href="./">YEEZIK</a>
+    <span class="hide-sm">Music producer<br>&amp; DJ</span>
+    <nav class="hide-sm" aria-label="Main"><a href="./">Home</a><a href="about.html">About</a><a href="music.html" aria-current="page">Music</a><a href="events.html">Events</a></nav>
+    <span class="year hide-sm">2026</span>
+    <button class="pill small menu-btn" type="button" aria-expanded="false" aria-controls="sheet">Menu</button>
   </header>
+
+  <div class="sheet wrap" id="sheet" hidden>
+    <div class="sheet-top cap"><span class="brand">YEEZIK</span><button class="pill small sheet-close" type="button">Close</button></div>
+    <nav aria-label="Menu"><a href="./">Home</a><a href="about.html">About</a><a href="music.html" aria-current="page">Music</a><a href="events.html">Events</a></nav>
+    <span class="cap mute">House / Tech-house &mdash; 2026</span>
+  </div>
+
   <main>
-    <section class="hero">
-      <span class="label">Music</span>
-      <h1 class="h1">Releases</h1>
+    <section class="page-head wrap">
+      <h1 class="page-word" data-fit aria-label="MUSIC"><span class="ch" style="--i:0" aria-hidden="true">M</span><span class="ch" style="--i:1" aria-hidden="true">U</span><span class="ch" style="--i:2" aria-hidden="true">S</span><span class="px" aria-hidden="true"><i style="--x:0.1em;--y:0em;--s:0.16em;--d:0"></i><i style="--x:0em;--y:0.15em;--s:0.1em;--d:1"></i><i style="--x:0.08em;--y:0.29em;--s:0.13em;--d:2"></i><i style="--x:0.19em;--y:0.45em;--s:0.07em;--d:3"></i><i style="--x:0em;--y:0.52em;--s:0.11em;--d:4"></i><i style="--x:0.13em;--y:0.64em;--s:0.08em;--d:5"></i><i style="--x:0.2em;--y:0.76em;--s:0.06em;--d:6"></i><i style="--x:-0.04em;--y:0.85em;--s:0.05em;--d:7"></i></span><span class="ch" style="--i:4" aria-hidden="true">C</span></h1>
     </section>
-
-    <section>
-      <div class="rows">
-        <div class="row">
-          <span class="label">001</span>
-          <span class="t">Untitled</span>
-          <span class="label q">Coming soon</span>
-        </div>
-        <div class="row">
-          <span class="label">002</span>
-          <span class="t dim">Locked</span>
-          <span class="label">&mdash;</span>
-        </div>
-        <div class="row">
-          <span class="label">003</span>
-          <span class="t dim">Locked</span>
-          <span class="label">&mdash;</span>
-        </div>
+    <section class="section wrap">
+      <span class="section-label cap">Releases</span>
+      <p class="stagger">
+        <span class="i1">The first record is</span>
+        <span class="accent">almost ready <i class="dash"></i> stay close</span>
+      </p>
+      <div class="list">
+        <div class="item"><span class="cap mute">001</span><span class="t">Untitled</span><span class="pill small on">Coming soon</span></div>
+        <div class="item"><span class="cap mute">002</span><span class="t dim">Locked</span><span class="pill small">&mdash;</span></div>
+        <div class="item"><span class="cap mute">003</span><span class="t dim">Locked</span><span class="pill small">&mdash;</span></div>
       </div>
-    </section>
-
-    <section class="grid">
-      <div class="col-6 stack">
-        <span class="label">Sound</span>
-        <p class="lead">House and tech-house, 124&ndash;128 BPM, made for the booth.</p>
-      </div>
-      <div class="col-6 stack" style="align-content:end">
-        <p class="body">Spotify, Apple Music and SoundCloud links appear here with the first release. Players load only when you press play, so the page stays fast.</p>
-        <a class="cta" href="https://www.instagram.com/iamyeezik/">Get notified on Instagram <span class="arrow">&#8599;</span></a>
+      <div class="split">
+        <div class="spacer"></div>
+        <div>
+          <h2 class="h3">Where to listen</h2>
+          <p class="p">Spotify, Apple Music and SoundCloud links appear here with the first release.</p>
+        </div>
+        <div class="pills"><a class="pill on" href="https://www.instagram.com/iamyeezik/">Get notified &#8599;</a></div>
       </div>
     </section>
   </main>
-  <footer class="site-footer">
-    <span class="label">YEEZIK &mdash; Music producer &amp; DJ</span>
-    <a class="label" href="https://www.instagram.com/iamyeezik/">Instagram @iamyeezik &#8599;</a>
-    <span class="label q">ST&#9733;RBOY Level 001</span>
+
+  <footer class="foot wrap cap">
+    <span>YEEZIK</span>
+    <span class="mute">House / Tech-house</span>
+    <a href="https://www.instagram.com/iamyeezik/">Instagram &#8599;</a>
+    <span class="year mute">&copy;2026</span>
   </footer>
   <script src="assets/main.js" defer></script>
 </body>
