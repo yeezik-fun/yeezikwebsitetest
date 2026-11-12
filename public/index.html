@@ -947,7 +947,11 @@ void main() {
 
       const chars = Array.from(String(o.text ?? ''));
       const letters = chars.filter(c => !isSpace(c));
-      let pool = o.useOriginalCharsOnly ? Array.from(new Set(letters)) : Array.from(o.characters);
+      // Nel font Moderniz (demo) questi caratteri non hanno il glifo ma il logo
+      // dell'autore: non li usiamo mai nello scramble.
+      const LOGO_GLYPHS = new Set(['£', '¤', '@', '§', '¶', 'µ', '`', '©', '®', '™']);
+      let pool = (o.useOriginalCharsOnly ? Array.from(new Set(letters)) : Array.from(o.characters))
+        .filter(c => !LOGO_GLYPHS.has(c));
       if (!pool.length) pool = letters;
 
       const startsHidden = ['click', 'view', 'inViewHover'].includes(o.animateOn);
@@ -1284,7 +1288,7 @@ void main() {
     loop: false,
     loopDelay: 2000,
     useOriginalCharsOnly: false,
-    characters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*+',
+    characters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#$%&*+',
     className: 'revealed',
     encryptedClassName: 'encrypted',
     clickMode: 'once'
