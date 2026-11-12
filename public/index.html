@@ -942,7 +942,8 @@ void main() {
         useOriginalCharsOnly: false,
         characters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+',
         className: '', encryptedClassName: '', animateOn: 'hover', clickMode: 'once',
-        effect: 'scramble', scrambleColor: '', loop: false, loopDelay: 2000, hoverRadius: 0
+        effect: 'scramble', scrambleColor: '', loop: false, loopDelay: 2000, hoverRadius: 0,
+        introHold: 0
       }, opts);
 
       const chars = Array.from(String(o.text ?? ''));
@@ -1257,7 +1258,7 @@ void main() {
         const io = new IntersectionObserver(entries => {
           visible = entries.some(en => en.isIntersecting);
           if (!visible) return;
-          if (viewTrigger && !played) { played = true; startRun(true); }
+          if (viewTrigger && !played) { played = true; startRun(true, { lead: o.sequential ? Math.round(o.introHold / step) : 0 }); }
           const resume = pending;
           pending = null;
           resume?.();
@@ -1283,6 +1284,7 @@ void main() {
     revealDirection: 'start',  // 'start' | 'end' | 'center' | 'random'
     speed: 60,
     maxIterations: 10,
+    introHold: 1400,           // ms di scramble iniziale prima che le lettere inizino a fermarsi
     hoverRadius: 100,
     scrambleColor: '#ffffff',
     loop: false,
