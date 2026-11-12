@@ -6,6 +6,7 @@
   <title>Yeezik</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="fonts/Moderniz.woff" as="font" type="font/woff" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -66,10 +67,19 @@
       font-display: swap;
     }
 
+    /* ===== MODERNIZ (Eko Bimantara, freeware) — font del titolo ===== */
+    @font-face {
+      font-family: "Moderniz";
+      src: url("fonts/Moderniz.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
     h1 {
-      font-family: "Helvetica Now Display", "Helvetica Now Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-family: "Moderniz", "Helvetica Now Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: clamp(3rem, 12vw, 9rem);
-      font-weight: 700;
+      font-weight: 400;
       letter-spacing: 0.04em;
       pointer-events: auto; /* serve per l'effetto al passaggio del mouse */
       cursor: default;
@@ -1250,7 +1260,7 @@ void main() {
     loop: false,
     loopDelay: 2000,
     useOriginalCharsOnly: false,
-    characters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+',
+    characters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*+',
     className: 'revealed',
     encryptedClassName: 'encrypted',
     clickMode: 'once'
