@@ -1189,14 +1189,38 @@ void main() {
         ensureTicker();
       };
 
+      // Su iPhone/telefoni il "mouseleave" non arriva mai dopo un tocco:
+      // senza questo l'effetto resterebbe acceso all'infinito.
+      // Al tocco facciamo un solo scramble breve, poi si ferma da solo.
+      let lastTouch = 0;
+      let touchTimer = null;
+      const fromTouch = () => Date.now() - lastTouch < 1000;
+      if (hoverable) {
+        el.addEventListener('touchstart', e => {
+          lastTouch = Date.now();
+          const t = e.touches[0];
+          if (!t) return;
+          if (local) {
+            trackPointer({ clientX: t.clientX, clientY: t.clientY });
+            clearTimeout(touchTimer);
+            touchTimer = setTimeout(() => { pointer = null; }, 250);
+          } else if (!run) {
+            startRun(true, { from: chars.map(c => isSpace(c)) });
+          }
+        }, { passive: true });
+        el.addEventListener('touchend', () => { lastTouch = Date.now(); }, { passive: true });
+      }
+
       if (hoverable) {
         el.addEventListener('mouseenter', e => {
+          if (fromTouch()) return;
           if (local) { trackPointer(e); return; }
           if (run) return;
           startRun(true, { from: chars.map(c => isSpace(c)) });
         });
-        el.addEventListener('mousemove', e => { if (local) trackPointer(e); });
+        el.addEventListener('mousemove', e => { if (local && !fromTouch()) trackPointer(e); });
         el.addEventListener('mouseleave', () => {
+          if (fromTouch()) return;
           if (local) { pointer = null; return; }
           stopRun();
           target = true;
